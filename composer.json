@@ -1,5 +1,5 @@
 {
-    "name": "kardasz/swiftmailer-transport-sendgrid",
+    "name": "phoneburner/swiftmailer-transport-sendgrid",
     "description": "SwiftMailer Sendgrid Transport",
     "type": "library",
     "license": "MIT",
