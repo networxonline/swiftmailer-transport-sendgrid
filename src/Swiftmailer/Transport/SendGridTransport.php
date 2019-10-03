@@ -130,7 +130,7 @@ class SendGridTransport implements Swift_Transport
         }
 
         $email->setSubject($message->getSubject());
-        $email->addContent($message->getContentType(), $message->getBody());
+        $email->addContent($message->getBodyContentType(), $message->getBody());
 
         $children = $message->getChildren();
         foreach ($children as $child) {
