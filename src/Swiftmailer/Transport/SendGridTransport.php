@@ -134,7 +134,11 @@ class SendGridTransport implements Swift_Transport
 
         $children = $message->getChildren();
         foreach ($children as $child) {
-            $email->addContent($child->getContentType(), $child->getBody());
+            if ($child instanceof \Swift_Attachment) {
+                $email->addAttachment($child->getBody(), $child->getBodyContentType(), $child->getFilename(), $child->getDisposition());
+            } else {
+                $email->addContent($child->getContentType(), $child->getBody());
+            }
         }
 
         $response = $this->client->send($email);
